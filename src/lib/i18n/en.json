@@ -34,7 +34,13 @@
         "inOneHour": "In A Hour",
         "longerDuration": "Longer Duration",
         "getLocate": "Get Location",
-        "unableGetGps": "Cannot Get GPS Data"
+        "notFinished": "Not finished",
+        "showInGoogleMap": "Show in Google Map"
+    },
+    "infos": {
+        "unableGetGps": "Cannot Get GPS Data",
+        "zoomInToShow": "Zoom in to show markers",
+        "noStationsSelected": "No markers are shown"
     },
     "titles": {
         "data": "Data",

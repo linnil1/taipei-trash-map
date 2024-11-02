@@ -40,7 +40,7 @@
 	}
 	function getGps() {
 		if (!navigator.geolocation) {
-			alert($_('buttons.unableGetGps'));
+			alert($_('infos.unableGetGps'));
 			stopGps();
 			return;
 		}
@@ -57,7 +57,7 @@
 				if (isStart && !isStop) gpsTimer = setTimeout(getGps, 1000);
 			},
 			(error) => {
-				alert($_('buttons.unableGetGps'));
+				alert($_('infos.unableGetGps'));
 				stopGps();
 				return;
 			}
@@ -87,5 +87,5 @@
 </script>
 
 <div class="hidden">
-	<Icon id="device" icon="ph:gps-fill" class="h-8 w-8 text-blue-600" />
+	<Icon id="device" icon="ph:gps-fill" class="h-8 w-8 text-amber-600" />
 </div>

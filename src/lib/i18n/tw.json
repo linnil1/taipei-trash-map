@@ -34,7 +34,13 @@
         "inOneHour": "一小時內",
         "longerDuration": "較長時間",
         "getLocate": "目前位置",
-        "unableGetGps": "無法取得GPS"
+        "notFinished": "還未結束",
+        "showInGoogleMap": "用 Google Map 打開"
+    },
+    "infos": {
+        "unableGetGps": "無法取得GPS",
+        "zoomInToShow": "請放大地圖以顯示站點",
+        "noStationsSelected": "無站點顯示"
     },
     "titles": {
         "data": "資料",

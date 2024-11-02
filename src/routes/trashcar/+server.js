@@ -7,9 +7,11 @@ const locations =
 
 import { json } from '@sveltejs/kit';
 
-export async function GET() {
+export async function GET({url}) {
+    const lat = url.searchParams.get('lat'); 
+    const lng = url.searchParams.get('lng'); 
 	// return json(locations)
-  let resp = await fetch("localhost:5001")
+  let resp = await fetch(`localhost:5001/?lat=${lat}&lng=${lng}`)
   let data = await resp.json()
   return json(data)
 }

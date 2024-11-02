@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
@@ -32,10 +31,11 @@ const stations = [
 		return Math.floor((endDate - startDate) / (1000 * 60));
 	}
 
-	let stations = $state([]);
-	onMount(async () => {
+	async function fetchStation(latlng) {
 		try {
-			const response = await fetch('/trashcar');
+			const response = await fetch(`/trashcar?lat=${latlng.lat}&lng=${latlng.lng}`, {
+				cache: 'force-cache'
+			});
 			if (response.ok) {
 				let stations1 = await response.json();
 				stations = stations1.map((station) => {
@@ -48,10 +48,12 @@ const stations = [
 		} catch (error) {
 			console.error('Error fetching stations:', error);
 		}
-	});
+	}
+
+	let stations = $state([]);
 
 	// gps
-	let isGpsOn = $state(false);
+	let isGpsOn = $state(true);
 	let deviceGps = $state(null);
 	function toggleGps() {
 		isGpsOn = !isGpsOn;
@@ -75,13 +77,18 @@ const stations = [
 			.filter((station) => station.duration >= pickerDuration);
 	});
 
+	async function onMoved(latlng) {
+		// console.log(latlng)
+		await fetchStation(latlng);
+	}
+
 	let pickerDate = $state(['00:00', '23:59']);
 	let pickerWeekday = $state(null);
 	let pickerDuration = $state(0);
 	let isFilterMenuOpen = $state(false);
 </script>
 
-<Map stations={filteredstations} bind:deviceGps deviceTracing={isGpsOn}>
+<Map stations={filteredstations} bind:deviceGps deviceTracing={isGpsOn} onmove={onMoved}>
 	<div class="fixed right-4 top-4 z-10 flex space-x-2">
 		<MenuItem
 			onclick={() => {

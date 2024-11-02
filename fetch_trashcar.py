@@ -1,6 +1,7 @@
 from itertools import chain
 import requests
 import json
+from flask import request
 
 
 def getTrashCar(offset=0):
@@ -69,9 +70,22 @@ def host():
 
     app = Flask(__name__)
 
+    tile_size = 0.01
+    def isInTile(car, lat, lng):
+        lat1 = car['lat'] / tile_size
+        lng1 = car['lng'] / tile_size
+        lat2 = lat / tile_size
+        lng2 = lng / tile_size
+        return lat2 - 1 <= lat1 <= lat2 + 2 and lng2 - 1 <= lng1 <= lng2 + 2
+
     @app.route("/")
     def index():
-        return jsonify(data[::10])
+        print(request.args)
+        lat = float(request.args['lat'])
+        lng = float(request.args['lng'])
+        rep_data = [i for i in data if isInTile(i, lat, lng)]
+        print(len(rep_data))
+        return jsonify(rep_data)
 
     app.run(port=5001, debug=True)
 

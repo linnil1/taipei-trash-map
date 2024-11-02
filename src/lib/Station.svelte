@@ -1,12 +1,15 @@
 <script lang="ts">
+	import Icon from '@iconify/svelte';
 	import { _ } from 'svelte-i18n';
 	let { id, data } = $props();
 	const keys = [
-		'id',
+		// 'id',
 		// "lat, "lng", "address",
-		'startTime', 'endTime',
-		'district', 'village',
-		'route', 'trip', // "team1", "team2",
+		'startTime',
+		'endTime',
+		// 'district', 'village',
+		'route',
+		'trip', // "team1", "team2",
 		'plate',
 		'dataTime'
 	];
@@ -22,5 +25,17 @@
 				</tr>
 			{/if}
 		{/each}
+		<tr>
+			<td colspan="2" class="p-1 text-orange-400">
+				<a
+					href={`https://www.google.com/maps/dir//${data.lat},${data.lng}`}
+					target="_blank"
+					class="flex"
+				>
+					<Icon icon="logos:google-maps" class="h-4 w-4" />
+					{$_('buttons.showInGoogleMap')}
+				</a>
+			</td>
+		</tr>
 	</tbody>
 </table>

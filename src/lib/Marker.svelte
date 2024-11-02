@@ -3,12 +3,12 @@
 	import TimerMarker from './TimerMarker.svelte';
 	import Station from '$lib/Station.svelte';
 
-	let { station } = $props();
+	let { station, hide } = $props();
 	const loader = getContext('loader');
 	const getMap = getContext('map');
-	const getCluster = getContext('cluster');
+	// const getCluster = getContext('cluster');
+	// const cluster = getCluster();
 	const map = getMap();
-	const cluster = getCluster();
 	const getInfoWindow = getContext('infoWindow');
 	const infoWindow = getInfoWindow();
 	// let fullTime = station.startTime + "-" + station.endTime
@@ -35,20 +35,26 @@
 	onMount(() => {
 		loader.importLibrary('marker').then(({ AdvancedMarkerElement }) => {
 			marker = new AdvancedMarkerElement({
-				// map: map,
+				map: map,
 				position: { lat: station.lat, lng: station.lng },
 				content: document.querySelector(`#id-${station.id}`),
 				gmpClickable: true
 			});
 			marker.addListener('click', popup);
-			cluster.addMarker(marker);
+			// cluster.addMarker(marker);
 		});
 	});
 
+	$effect(() => {
+		if (marker && hide) marker.setMap(null);
+		else if (marker) marker.setMap(map);
+	});
+
 	onDestroy(() => {
-		// marker.map = null;
 		marker.removeEventListener('click', popup);
-		cluster.removeMarker(marker);
+		marker.setMap(null);
+		// cluster.removeMarker(marker);
+		marker = null;
 	});
 </script>
 

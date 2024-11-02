@@ -62,6 +62,13 @@
 
 	function setNow() {
 		const now = new Date();
+		const now1 = new Date(now.getTime() + 10 * 60 * 1000);
+		pickerWeekday = now.getDay();
+		pickerDate = [getTime(now), getTime(now1)];
+	}
+
+	function setNotFinished() {
+		const now = new Date();
 		pickerWeekday = now.getDay();
 		pickerDate = [getTime(now), pickerDate[1]];
 	}
@@ -79,7 +86,7 @@
 </script>
 
 <div
-	class="absolute top-0 flex w-full flex-col flex-wrap justify-center rounded-lg p-1 pl-2 md:top-2 md:flex-row md:items-start md:space-x-4"
+	class="absolute top-0 flex w-full flex-col flex-wrap justify-center rounded-lg md:m-4 md:flex-row md:items-start md:space-x-4"
 >
 	<!-- Time Range Picker -->
 	<ControlItem title={$_('labels.timeRange')}>
@@ -123,6 +130,7 @@
 		<QuickFilterButton onclick={setToday}>{$_('buttons.today')}</QuickFilterButton>
 		<QuickFilterButton onclick={setTomorrow}>{$_('buttons.tomorrow')}</QuickFilterButton>
 		<QuickFilterButton onclick={setNow}>{$_('buttons.now')}</QuickFilterButton>
+		<QuickFilterButton onclick={setNotFinished}>{$_('buttons.notFinished')}</QuickFilterButton>
 		<QuickFilterButton onclick={setNowWithTime(1)}>{$_('buttons.inOneHour')}</QuickFilterButton>
 		<QuickFilterButton onclick={setDuration(10)}>{$_('buttons.longerDuration')}</QuickFilterButton>
 	</ControlItem>
