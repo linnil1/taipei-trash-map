@@ -27,8 +27,10 @@ vim src/lib/Map.svelte
 
 ```bash
 python fetch_trashcar.py
-bunx wrangler kv key put data --binding data_trashcar --path trashcar.json --local
-bunx wrangler kv key put data --binding data_trashcar --path trashcar.json
+bunx wrangler kv key put --binding data_trashcar data --path trashcar.json --local
+bunx wrangler kv key put --binding data_trashcar info --path trashcar_info.json --local
+bunx wrangler kv key put --binding data_trashcar data --path trashcar.json
+bunx wrangler kv key put --binding data_trashcar info --path trashcar_info.json
 ```
 
 ### run

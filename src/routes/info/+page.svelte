@@ -2,11 +2,13 @@
 	import { locale, locales, _, isLoading } from 'svelte-i18n';
 	import { goto, replaceState } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { tick } from 'svelte';
+	import { onMount, tick } from 'svelte';
 
 	import Icon from '@iconify/svelte';
 	import InfoCard from '$lib/InfoCard.svelte';
 	import InfoCardText from '$lib/InfoCardText.svelte';
+
+	let lastUpdateTime = $state('NA');
 
 	$effect(() => {
 		if ($isLoading) {
@@ -16,6 +18,20 @@
 			$page.url.searchParams.set('lang', $locale);
 			replaceState($page.url, $page.state);
 		});
+	});
+
+	onMount(async () => {
+		try {
+			const response = await fetch('/trashcar/info');
+			if (response.ok) {
+				let data = await response.json();
+				lastUpdateTime = data['lastUpdateTime'];
+			} else {
+				lastUpdateTime = "Error: Cannot fetch info"
+			}
+		} catch (error) {
+			lastUpdateTime = "Error: Cannot fetch info"
+		}
 	});
 
 	function gotoHome() {
@@ -102,6 +118,9 @@
 				target="_blank"
 				class="text-blue-500 hover:underline">垃圾車</a
 			> 相關資料而且有在更新。我大概每三個月更新一次就好。
+		</InfoCardText>
+		<InfoCardText title={$_('titles.lastUpdateTime')}>
+			{lastUpdateTime}
 		</InfoCardText>
 	</InfoCard>
 

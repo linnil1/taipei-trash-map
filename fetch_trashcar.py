@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 from functools import partial
 from itertools import chain
 import json
@@ -22,6 +23,7 @@ key_mapping = {
     "路線": "route",
 }
 PATH_DATA = "trashcar.json"
+PATH_DATA_INFO = "trashcar_info.json"
 # data
 # {'_id': 20, '_importdate': {'date': '2024-10-17 08:36:53.125393', 'timezone_type': 3, 'timezone': 'Asia/Taipei'}, '行政區': '中山區', '里別': '龍洲里', '分隊': '南京分隊', '局編': '100-022', '車號': '121-BQ', '路線': '南京-1', '車次': '第1車', '抵達時間': '1731', '離開時間': '1745', '地點': '臺北市中山區興安街75號', '經度': '121.54284', '緯度': '25.05625'}
 
@@ -55,6 +57,15 @@ def isAdd(data, keys, by):
 
 
 def fetchData():
+    with open(PATH_DATA_INFO, "w") as f:
+        json.dump(
+            {
+                "lastUpdateTime": datetime.now(tz=timezone.utc).strftime(
+                    "%Y-%m-%d %H:%M:%S"
+                ),
+            },
+            f,
+        )
     data = map(getTrashCar, range(0, 5000, 1000))  # current size 4038
     data = chain.from_iterable(data)
     data = map(rename, data)
