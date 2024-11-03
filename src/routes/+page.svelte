@@ -68,9 +68,8 @@ const stations = [
 	}
 
 	onMount(() => {
-		if (!isUserBlockLocation())
-			isGpsOn = true;
-	})
+		if (!isUserBlockLocation()) isGpsOn = true;
+	});
 
 	// Filter stations based on start and end time
 	let filteredstations = $state([]);

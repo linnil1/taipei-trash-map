@@ -43,6 +43,10 @@
 		"noStationsSelected": "No markers are shown"
 	},
 	"titles": {
+		"author": "Author",
+		"author_link_text": "linnil1 Personal Website",
+		"code": "Source Code",
+		"github_repo": "GitHub Repo",
 		"data": "Data",
 		"setting": "Setting",
 		"introduction": "Introduction",

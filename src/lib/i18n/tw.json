@@ -43,6 +43,10 @@
 		"noStationsSelected": "無站點顯示"
 	},
 	"titles": {
+		"author": "作者",
+		"author_link_text": "linnil1 個人網站",
+		"code": "程式碼",
+		"github_repo": "GitHub Repo",
 		"data": "資料",
 		"setting": "設定",
 		"introduction": "介紹",

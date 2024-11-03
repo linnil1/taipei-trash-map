@@ -23,12 +23,15 @@
 	}
 </script>
 
+<div class="mt-8 flex items-center justify-center">
+	<img src="/icon.jpg" class="h-48 w-48 rounded-lg object-cover" alt="Icon" />
+</div>
 {#if !$isLoading}
 	<button
 		onclick={gotoHome}
 		class="fixed right-4 top-4 flex items-center space-x-1 rounded bg-blue-500 p-2 text-white shadow-lg hover:bg-blue-600"
 	>
-		<Icon icon="lets-icons:back" class="h-full w-full" />
+		<Icon icon="lets-icons:back" class="h-8 w-8" />
 		<span>{$_('pages.goToMap')}</span>
 	</button>
 
@@ -72,19 +75,21 @@
 	</InfoCard>
 
 	<InfoCard title={$_('titles.information')}>
-		<InfoCardText
-			>作者 linnil1 <a
-				href="https://github.com/linnil1"
-				target="_blank"
-				class="text-blue-500 hover:underline">GitHub</a
-			>
+		<InfoCardText title={$_('titles.author')}>
+			<a href="https://linnil1.tw" target="_blank" class="text-blue-500 hover:underline">
+				{$_('titles.author_link_text')}
+			</a>
 		</InfoCardText>
-		<InfoCardText
-			>程式碼 repo <a
-				href="https://github.com/linnil1/xxxxx"
+
+		<InfoCardText title={$_('titles.code')}>
+			<a
+				href="https://github.com/linnil1/taipei-trash-map"
 				target="_blank"
-				class="text-blue-500 hover:underline">GitHub Repo</a
+				class="flex items-center space-x-1 text-blue-500 hover:underline"
 			>
+				<Icon icon="mdi:github" />
+				<span>{$_('titles.github_repo')}</span>
+			</a>
 		</InfoCardText>
 		<InfoCardText
 			>相關討論、功能問題、需求，可以去我的 repo 玩。 除了倒數功能這個需求，因為我覺得 APP

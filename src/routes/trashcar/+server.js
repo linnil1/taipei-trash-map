@@ -56,16 +56,12 @@ import { json } from '@sveltejs/kit';
 const TILE_SIZE = 0.01;
 
 function isInTile(car, lat, lng) {
-	const lat1 = car['lat'] / TILE_SIZE
-	const lng1 = car['lng'] / TILE_SIZE
-	const lat2 = lat / TILE_SIZE
-	const lng2 = lng / TILE_SIZE
-	return lat2 - 1 <= lat1
-		&& lat1 <= lat2 + 2
-		&& lng2 - 1 <= lng1
-		&& lng1 <= lng2 + 2
+	const lat1 = car['lat'] / TILE_SIZE;
+	const lng1 = car['lng'] / TILE_SIZE;
+	const lat2 = lat / TILE_SIZE;
+	const lng2 = lng / TILE_SIZE;
+	return lat2 - 1 <= lat1 && lat1 <= lat2 + 2 && lng2 - 1 <= lng1 && lng1 <= lng2 + 2;
 }
-
 
 export async function GET({ platform, url }) {
 	// debug1
@@ -74,7 +70,7 @@ export async function GET({ platform, url }) {
 	// const resp = await fetch("localhost:5001")
 	// const data = await resp.json();
 	// prod
-	const data = await platform.env.data_trashcar.get("data", { type: "json", cacheTtl: 86400 })
+	const data = await platform.env.data_trashcar.get('data', { type: 'json', cacheTtl: 86400 });
 	const lat = parseFloat(url.searchParams.get('lat'));
 	const lng = parseFloat(url.searchParams.get('lng'));
 	const new_data = data.filter((car) => isInTile(car, lat, lng));

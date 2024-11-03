@@ -59,7 +59,7 @@
 				if (isStart && !isStop) gpsTimer = setTimeout(getGps, 1000);
 			},
 			(error) => {
-				if (error.code === 1 ) {
+				if (error.code === 1) {
 					// Permission deny
 					alert($_('infos.unableGetGps'));
 					stopGps();
