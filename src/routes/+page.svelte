@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
 	import Map from '$lib/Map.svelte';
 	import Control from '$lib/Control.svelte';
 	import MenuItem from '$lib/MenuItem.svelte';
+	import { isUserBlockLocation } from '$lib/location';
 
 	/*
 const stations = [
@@ -53,7 +55,7 @@ const stations = [
 	let stations = $state([]);
 
 	// gps
-	let isGpsOn = $state(true);
+	let isGpsOn = $state(false);
 	let deviceGps = $state(null);
 	function toggleGps() {
 		isGpsOn = !isGpsOn;
@@ -64,6 +66,11 @@ const stations = [
 			deviceGps = null;
 		}
 	}
+
+	onMount(() => {
+		if (!isUserBlockLocation())
+			isGpsOn = true;
+	})
 
 	// Filter stations based on start and end time
 	let filteredstations = $state([]);

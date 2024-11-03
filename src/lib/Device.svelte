@@ -2,6 +2,7 @@
 	import Icon from '@iconify/svelte';
 	import { _ } from 'svelte-i18n';
 	import { getContext, onDestroy, onMount, tick } from 'svelte';
+	import { userBlockLocation, userUnblockLocation } from './location';
 
 	let { location = $bindable(), tracing = false } = $props();
 	const loader = getContext('loader');
@@ -53,24 +54,26 @@
 					lng: position.coords.longitude
 				};
 				console.log('Location', JSON.stringify(location));
+				userUnblockLocation();
 				if (firstTime) map.setCenter(location);
 				if (isStart && !isStop) gpsTimer = setTimeout(getGps, 1000);
 			},
 			(error) => {
-				alert($_('infos.unableGetGps'));
-				stopGps();
-				return;
+				if (error.code === 1 ) {
+					// Permission deny
+					alert($_('infos.unableGetGps'));
+					stopGps();
+					userBlockLocation();
+					return;
+				}
 			}
 		);
 	}
 
 	$effect(() => {
 		// console.log(tracing, isStart, isStop)
-		if (!tracing && !isStop) {
-			stopGps();
-		}
+		if (!tracing && !isStop) stopGps();
 		if (tracing && !isStart) startGps();
-
 		if (marker && map && marker && isStart && !isStop) {
 			// marker.setPosition(location)
 			marker.position = location;
@@ -87,5 +90,5 @@
 </script>
 
 <div class="hidden">
-	<Icon id="device" icon="ph:gps-fill" class="h-8 w-8 text-amber-600" />
+	<Icon id="device" icon="ph:gps-fill" class="h-8 w-8 text-red-500" />
 </div>

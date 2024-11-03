@@ -32,9 +32,9 @@
 	setContext('infoWindow', () => infoWindow);
 
 	let mytile = $state({ lat: 0, lng: 0 });
-	const TILE_INTERVAL = 0.01;
+	const TILE_SIZE = 0.01;
 	function getTile(x) {
-		return Number(Math.floor(x / TILE_INTERVAL) * TILE_INTERVAL).toFixed(3);
+		return Number(Math.floor(x / TILE_SIZE) * TILE_SIZE).toFixed(3);
 	}
 
 	loader
