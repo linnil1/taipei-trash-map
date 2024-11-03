@@ -1,70 +1,70 @@
 {
-    "app_full_name": "Taipei Trash Map",
-    "labels": {
-        "weekday": "Weekday",
-        "durationThreshold": "Duration",
-        "minutes": "minutes",
-        "quickButton": "Commonly Used",
-        "timeRange": "Time Range"
-    },
-    "languages": {
-        "en": "English (en)",
-        "tw": "正體中文 (zh-TW)"
-    },
-    "pages": {
-        "goToMap": "Go to Map Page",
-        "goToInfo": "Go to Info Page",
-        "openFilter": "Display filter"
-    },
-    "weekdays": {
-        "0": "Sun",
-        "1": "Mon",
-        "2": "Tue",
-        "3": "Wed",
-        "4": "Thu",
-        "5": "Fri",
-        "6": "Sat",
-        "7": "Sun"
-    },
-    "buttons": {
-        "reset": "Reset",
-        "today": "Today",
-        "tomorrow": "Tomorrow",
-        "now": "Now",
-        "inOneHour": "In A Hour",
-        "longerDuration": "Longer Duration",
-        "getLocate": "Get Location",
-        "notFinished": "Not finished",
-        "showInGoogleMap": "Show in Google Map"
-    },
-    "infos": {
-        "unableGetGps": "Cannot Get GPS Data",
-        "zoomInToShow": "Zoom in to show markers",
-        "noStationsSelected": "No markers are shown"
-    },
-    "titles": {
-        "data": "Data",
-        "setting": "Setting",
-        "introduction": "Introduction",
-        "information": "Information",
-        "termsOfService": "Terms of Service",
-        "privacyPolicy": "Privacy Policy"
-    },
-    "details": {
-        "dataTime": "Data Time",
-        "id": "ID",
-        "team1": "Station",
-        "team2": "Division",
-        "location": "Location",
-        "district": "District",
-        "startTime": "Arrival Time",
-        "endTime": "Departure Time",
-        "lat": "Latitude",
-        "lng": "Longitude",
-        "plate": "Plate Number",
-        "route": "Route",
-        "trip": "Trip Number",
-        "village": "Village",
-        "address": "Address"
-    }
+	"app_full_name": "Taipei Trash Map",
+	"labels": {
+		"weekday": "Weekday",
+		"durationThreshold": "Duration",
+		"minutes": "minutes",
+		"quickButton": "Commonly Used",
+		"timeRange": "Time Range"
+	},
+	"languages": {
+		"en": "English (en)",
+		"tw": "正體中文 (zh-TW)"
+	},
+	"pages": {
+		"goToMap": "Go to Map Page",
+		"goToInfo": "Go to Info Page",
+		"openFilter": "Display filter"
+	},
+	"weekdays": {
+		"0": "Sun",
+		"1": "Mon",
+		"2": "Tue",
+		"3": "Wed",
+		"4": "Thu",
+		"5": "Fri",
+		"6": "Sat",
+		"7": "Sun"
+	},
+	"buttons": {
+		"reset": "Reset",
+		"today": "Today",
+		"tomorrow": "Tomorrow",
+		"now": "Now",
+		"inOneHour": "In A Hour",
+		"longerDuration": "Longer Duration",
+		"getLocate": "Get Location",
+		"notFinished": "Not finished",
+		"showInGoogleMap": "Show in Google Map"
+	},
+	"infos": {
+		"unableGetGps": "Cannot Get GPS Data",
+		"zoomInToShow": "Zoom in to show markers",
+		"noStationsSelected": "No markers are shown"
+	},
+	"titles": {
+		"data": "Data",
+		"setting": "Setting",
+		"introduction": "Introduction",
+		"information": "Information",
+		"termsOfService": "Terms of Service",
+		"privacyPolicy": "Privacy Policy"
+	},
+	"details": {
+		"dataTime": "Data Time",
+		"id": "ID",
+		"team1": "Station",
+		"team2": "Division",
+		"location": "Location",
+		"district": "District",
+		"startTime": "Arrival Time",
+		"endTime": "Departure Time",
+		"lat": "Latitude",
+		"lng": "Longitude",
+		"plate": "Plate Number",
+		"route": "Route",
+		"trip": "Trip Number",
+		"village": "Village",
+		"address": "Address"
+	}
 }

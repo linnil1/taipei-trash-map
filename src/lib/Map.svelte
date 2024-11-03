@@ -33,6 +33,10 @@
 
 	let mytile = $state({ lat: 0, lng: 0 });
 	const TILE_INTERVAL = 0.01;
+	function getTile(x) {
+		return Number(Math.floor(x / TILE_INTERVAL) * TILE_INTERVAL).toFixed(3);
+	}
+
 	loader
 		.importLibrary('maps')
 		.then(({ Map, InfoWindow }) => {
@@ -41,12 +45,8 @@
 			infoWindow = new InfoWindow();
 
 			map.addListener('idle', () => {
-				const lat = Number(
-					Math.floor(map.getCenter().lat() / TILE_INTERVAL) * TILE_INTERVAL
-				).toFixed(3);
-				const lng = Number(
-					Math.floor(map.getCenter().lng() / TILE_INTERVAL) * TILE_INTERVAL
-				).toFixed(3);
+				const lat = getTile(map.getCenter().lat());
+				const lng = getTile(map.getCenter().lng());
 				if (!(lat == mytile.lat && lng == mytile.lng)) {
 					mytile = { lat, lng };
 					onmove({ lat, lng });

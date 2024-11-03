@@ -1,11 +1,11 @@
 <script>
-	import Icon from "@iconify/svelte";
+	import Icon from '@iconify/svelte';
 
 	let { id, text } = $props();
 </script>
 
 <div {id} class="marker">
-	<Icon class="h-6 w-6 markerIcon text-gray-800" icon="tabler:trash"/>
+	<Icon class="markerIcon h-6 w-6 text-gray-800" icon="tabler:trash" />
 	{text}
 </div>
 

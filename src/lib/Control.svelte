@@ -70,7 +70,7 @@
 	function setNotFinished() {
 		const now = new Date();
 		pickerWeekday = now.getDay();
-		pickerDate = [getTime(now), pickerDate[1]];
+		pickerDate = [getTime(now), '23:59'];
 	}
 
 	function setDuration(mins) {
