@@ -8,6 +8,14 @@ Please submit ISSUE/PR in English or Tranditional-Chinese
 
 ## Develop/Deploy
 
+### Caution
+
+- This website uses Svelte version 5 (latest as of 2024/10/28).
+- Although TypeScript (TS) is used, none are explicitly annotated by me.
+- cloudflare/workerd is not compatible with Bun; npm is used instead.
+- No tested/lint are used currently.
+
+
 ### init
 
 ```bash

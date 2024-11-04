@@ -13,6 +13,12 @@
 		'plate',
 		'dataTime'
 	];
+
+	function generateLink() {
+		return navigator.userAgent.includes('Android')
+			? `geo:0,0?q=${data.lat},${data.lng}(${data.address})`
+			: `https://www.google.com/maps/search/?api=1&query=${data.lat},${data.lng}`;
+	}
 </script>
 
 <table {id} class="w-full border-collapse text-left font-sans text-gray-800">
@@ -27,11 +33,7 @@
 		{/each}
 		<tr>
 			<td colspan="2" class="p-1 text-orange-400">
-				<a
-					href={`https://www.google.com/maps/dir//${data.lat},${data.lng}`}
-					target="_blank"
-					class="flex"
-				>
+				<a href={generateLink()} target="_blank" class="flex">
 					<Icon icon="logos:google-maps" class="h-4 w-4" />
 					{$_('buttons.showInGoogleMap')}
 				</a>
