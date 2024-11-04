@@ -71,11 +71,13 @@ def fetchData():
     data = map(rename, data)
     keys = set()
     data = filter(partial(isAdd, keys=keys, by=lambda i: i["id"]), data)
+    data = list(data)
     with open(PATH_DATA, "w") as f:
-        data = list(data)
         json.dump(data, f)
     print("data:", len(data))
     print("Save in", PATH_DATA)
+    # make sure no error by using data length
+    assert len(data) > 3500
 
 
 def host():

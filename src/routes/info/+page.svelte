@@ -27,10 +27,10 @@
 				let data = await response.json();
 				lastUpdateTime = data['lastUpdateTime'];
 			} else {
-				lastUpdateTime = "Error: Cannot fetch info"
+				lastUpdateTime = 'Error: Cannot fetch info';
 			}
 		} catch (error) {
-			lastUpdateTime = "Error: Cannot fetch info"
+			lastUpdateTime = 'Error: Cannot fetch info';
 		}
 	});
 
@@ -107,9 +107,20 @@
 				<span>{$_('titles.github_repo')}</span>
 			</a>
 		</InfoCardText>
-		<InfoCardText
-			>相關討論、功能問題、需求，可以去我的 repo 玩。 除了倒數功能這個需求，因為我覺得 APP
-			的作者做得很好，所以我在這裡暫時先不實現這個功能。
+		<InfoCardText title={$_('titles.feedback')}>
+			<span class="flex">
+				不會使用 Github 的人，請使用<a
+					href="https://docs.google.com/forms/d/e/1FAIpQLSepk3nqxEQ8QHw-FkF-uXVJm9aQOEk7Dl6Cp79WIhUsJTHTPQ/viewform?usp=sf_link"
+					target="_blank"
+					class="ml-2 text-blue-500 hover:underline"
+				>
+					Google 表單
+				</a>
+			</span>
+			<br />
+			相關討論、功能問題、需求，可以去我的 repo 玩。
+			<br />
+			除了倒數功能這個需求，因為我覺得 APP 的作者做得很好，所以我在這裡暫時先不實現這個功能。
 		</InfoCardText>
 
 		<InfoCardText title={$_('titles.data')}>

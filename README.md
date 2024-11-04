@@ -2,15 +2,9 @@
 
 ## Policy
 
-如果有任何問題
+If any bugs/questions/suggestions founded,
 
-- 請善用 ISSUE/PR
-- 請填寫表單 (給不會用 Github 的人)
-
-If any questions/suggestions
-
-- Please submit ISSUE/PR
-- Submit the form (for non-Github user)
+Please submit ISSUE/PR in English or Tranditional-Chinese
 
 ## Develop/Deploy
 
