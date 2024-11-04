@@ -1,11 +1,12 @@
 <script lang="ts">
-	import '../app.css';
-	let { children } = $props();
-
+	import type { LayoutLoad } from './$types';
+	import { locale, waitLocale, isLoading } from 'svelte-i18n';
 	import { browser } from '$app/environment';
 	import '$lib/i18n';
-	import { locale, waitLocale } from 'svelte-i18n';
-	import type { LayoutLoad } from './$types';
+	import '../app.css';
+
+	let { children } = $props();
+
 	const url = 'https://taipei-trash-map.linnil1.me';
 
 	export const load: LayoutLoad = async () => {
@@ -66,4 +67,9 @@
     }
 	</script>
 </svelte:head>
-{@render children()}
+
+{#if $isLoading}
+	Loading
+{:else}
+	{@render children()}
+{/if}

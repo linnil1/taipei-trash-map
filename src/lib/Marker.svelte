@@ -4,7 +4,8 @@
 	import Station from '$lib/Station.svelte';
 
 	let { station, hide } = $props();
-	const loader = getContext('loader');
+	const getLoader = getContext('loader');
+	const loader = getLoader();
 	const getMap = getContext('map');
 	// const getCluster = getContext('cluster');
 	// const cluster = getCluster();

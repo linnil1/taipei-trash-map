@@ -13,8 +13,9 @@ Please submit ISSUE/PR in English or Tranditional-Chinese
 ```bash
 bun install
 bunx wrangler kv namespace create data_trashcar
-# change apiKey in src/lib/Map.svelte
-vim src/lib/Map.svelte
+# Add google maps' API_KEY
+# PUBLIC_GOOGLE_MAP_API_KEY=xxx
+vim .env
 ```
 
 ### Update data
@@ -39,4 +40,7 @@ bunx wrangler dev --port 5000
 
 ```bash
 bun run deploy
+# or
+bun run build
+bunx wrangler pages deploy
 ```

@@ -5,7 +5,8 @@
 	import { userBlockLocation, userUnblockLocation } from './location';
 
 	let { location = $bindable(), tracing = false } = $props();
-	const loader = getContext('loader');
+	const getLoader = getContext('loader');
+	const loader = getLoader();
 	const getMap = getContext('map');
 	const map = getMap();
 	let marker = $state();

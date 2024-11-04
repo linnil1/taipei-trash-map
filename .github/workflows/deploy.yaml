@@ -23,6 +23,8 @@ jobs:
 
       - name: Build the project
         run: npm run build
+        with:
+          PUBLIC_GOOGLE_MAP_API_KEY: ${{ secrets.PUBLIC_GOOGLE_MAP_API_KEY }}
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
