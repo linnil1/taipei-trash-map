@@ -1,77 +1,77 @@
 {
-	"app_full_name": "台北垃圾地圖網頁版",
-	"labels": {
-		"weekday": "星期",
-		"durationThreshold": "停留時間",
-		"minutes": "分鐘",
-		"quickButton": "快速按鈕",
-		"timeRange": "時間區間"
-	},
-	"pages": {
-		"goToMap": "前往地圖",
-		"goToInfo": "前往資訊",
-		"openFilter": "打開篩選器"
-	},
-	"weekdays": {
-		"0": "日",
-		"1": "一",
-		"2": "二",
-		"3": "三",
-		"4": "四",
-		"5": "五",
-		"6": "六",
-		"7": "日"
-	},
-	"languages": {
-		"en": "English (en)",
-		"tw": "正體中文 (zh-TW)"
-	},
-	"buttons": {
-		"reset": "重設",
-		"today": "今天",
-		"tomorrow": "明天",
-		"now": "現在",
-		"inOneHour": "一小時內",
-		"longerDuration": "較長時間",
-		"getLocate": "目前位置",
-		"notFinished": "還未結束",
-		"showInGoogleMap": "用 Google Map 打開"
-	},
-	"infos": {
-		"unableGetGps": "無法取得GPS",
-		"zoomInToShow": "請放大地圖以顯示站點",
-		"noStationsSelected": "無站點顯示"
-	},
-	"titles": {
-		"author": "作者",
-		"author_link_text": "linnil1 個人網站",
-		"code": "程式碼",
-		"github_repo": "GitHub Repo",
-		"data": "資料",
-		"lastUpdateTime": "上次更新時間",
-		"feedback": "回饋",
-		"setting": "設定",
-		"introduction": "介紹",
-		"information": "資訊",
-		"termsOfService": "服務條款",
-		"privacyPolicy": "隱私政策"
-	},
-	"details": {
-		"dataTime": "資料時間",
-		"id": "ID",
-		"division": "局編",
-		"station": "分隊",
-		"team1": "局編",
-		"team2": "分隊",
-		"district": "行政區",
-		"startTime": "抵達時間",
-		"endTime": "離開時間",
-		"lat": "緯度",
-		"lng": "經度",
-		"route": "路線",
-		"trip": "車次",
-		"plate": "車牌",
-		"village": "里別",
-		"address": "地點"
-	}
+    "app_full_name": "台北垃圾地圖網頁版",
+    "labels": {
+        "weekday": "星期",
+        "durationThreshold": "停留時間",
+        "minutes": "分鐘",
+        "quickButton": "快速按鈕",
+        "timeRange": "時間區間"
+    },
+    "pages": {
+        "goToMap": "前往地圖",
+        "goToInfo": "前往資訊",
+        "openFilter": "打開篩選器"
+    },
+    "weekdays": {
+        "0": "日",
+        "1": "一",
+        "2": "二",
+        "3": "三",
+        "4": "四",
+        "5": "五",
+        "6": "六",
+        "7": "日"
+    },
+    "languages": {
+        "en": "English (en)",
+        "tw": "正體中文 (zh-TW)"
+    },
+    "buttons": {
+        "reset": "重設",
+        "today": "今天",
+        "tomorrow": "明天",
+        "now": "現在",
+        "inOneHour": "一小時內",
+        "longerDuration": "較長時間",
+        "getLocate": "目前位置",
+        "notFinished": "還未結束",
+        "showInGoogleMap": "用 Google Map 打開"
+    },
+    "infos": {
+        "unableGetGps": "無法取得GPS",
+        "zoomInToShow": "請放大地圖以顯示站點",
+        "noStationsSelected": "無站點顯示"
+    },
+    "titles": {
+        "author": "作者",
+        "author_link_text": "linnil1 個人網站",
+        "code": "程式碼",
+        "github_repo": "GitHub Repo",
+        "data": "資料",
+        "lastUpdateTime": "上次更新時間",
+        "feedback": "回饋",
+        "setting": "設定",
+        "introduction": "介紹",
+        "information": "資訊",
+        "termsOfService": "服務條款",
+        "privacyPolicy": "隱私政策"
+    },
+    "details": {
+        "dataTime": "資料時間",
+        "id": "ID",
+        "division": "局編",
+        "station": "分隊",
+        "team1": "局編",
+        "team2": "分隊",
+        "district": "行政區",
+        "startTime": "抵達時間",
+        "endTime": "離開時間",
+        "lat": "緯度",
+        "lng": "經度",
+        "route": "路線",
+        "trip": "車次",
+        "plate": "車牌",
+        "village": "里別",
+        "address": "地點"
+    }
 }

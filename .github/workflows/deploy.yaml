@@ -1,33 +1,33 @@
 name: Deploy Website
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    deploy:
+        runs-on: ubuntu-latest
+        name: Deploy
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
+            - name: Install Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
 
-      - name: Install dependencies
-        run: npm install
+            - name: Install dependencies
+              run: npm install
 
-      - name: Build the project
-        run: npm run build
-        env:
-          PUBLIC_GOOGLE_MAP_API_KEY: ${{ secrets.PUBLIC_GOOGLE_MAP_API_KEY }}
+            - name: Build the project
+              run: npm run build
+              env:
+                  PUBLIC_GOOGLE_MAP_API_KEY: ${{ secrets.PUBLIC_GOOGLE_MAP_API_KEY }}
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy
+            - name: Deploy to Cloudflare Pages
+              uses: cloudflare/wrangler-action@v3
+              with:
+                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  command: pages deploy

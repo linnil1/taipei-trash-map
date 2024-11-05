@@ -15,7 +15,6 @@ Please submit ISSUE/PR in English or Tranditional-Chinese
 - cloudflare/workerd is not compatible with Bun; npm is used instead.
 - No tested/lint are used currently.
 
-
 ### init
 
 ```bash
