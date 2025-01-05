@@ -1,4 +1,12 @@
-# Taipei Trash Map
+# Taipei Trash Map (台北垃圾地圖)
+
+## Key Features (主要功能)
+* Map-based visualization of garbage truck collection points
+  視覺化呈現垃圾車定點清運的地圖
+
+* Filtering mechanism for time, periods, and dates
+  時間、時段、日期篩選機制
+
 
 ## Policy
 
