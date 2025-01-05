@@ -2,7 +2,7 @@ name: Update Trashcar Data
 
 on:
     schedule:
-        - cron: '33 22 1 */3 *' # Every 3 months on the 1st
+        - cron: '33 22 6 */3 *' # Every 3 months on the 6th
 
 jobs:
     update_data:
@@ -27,6 +27,7 @@ jobs:
               uses: cloudflare/wrangler-action@v3
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  packageManager: npm
                   command: |
                       kv key put --binding data_trashcar data --path trashcar.json
                       kv key put --binding data_trashcar info --path trashcar_info.json
